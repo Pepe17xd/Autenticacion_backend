@@ -57,7 +57,7 @@ COPY src ./src
 RUN cmake -S . -B build -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake \
-    -DCMAKE_BUILD_RPATH=/opt/vcpkg/installed/x64-linux/lib
+    -DCMAKE_BUILD_RPATH=/app/vcpkg_installed/x64-linux/lib
 
 
 # Compilar
@@ -87,11 +87,12 @@ COPY --from=build /app/build/identity-service /app/identity-service
 
 
 # Librerías generadas por vcpkg
-COPY --from=build /opt/vcpkg/installed/x64-linux/lib/ /usr/local/lib/
+COPY --from=build /app/vcpkg_installed/x64-linux/lib/ /usr/local/lib/
 
 
 RUN ldconfig
 
+ENV LD_LIBRARY_PATH=/usr/local/lib
 
 EXPOSE 9000
 
