@@ -1,0 +1,9 @@
+{
+  "name": "astra-identity-service",
+  "version-string": "0.1.0",
+  "dependencies": [
+    { "name": "drogon", "features": ["postgres"] },
+    "argon2",
+    "openssl"
+  ]
+}

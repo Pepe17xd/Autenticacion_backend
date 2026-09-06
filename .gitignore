@@ -1,0 +1,49 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# CMake and native build outputs
+/build/
+/build-*/
+/cmake-build-*/
+/out/
+/vcpkg_installed/
+**/vcpkg_installed/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+*.ninja
+.ninja_*
+
+# Compiled binaries and libraries
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.obj
+*.o
+*.pdb
+*.ilk
+*.dSYM/
+
+# IDE and editor metadata
+.idea/
+.vscode/
+*.sln
+*.slnx
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.user
+*.iml
+
+# Logs, runtime files and local dependency caches
+*.log
+logs/
+/uploads/
+/.cache/
+/.vcpkg/
